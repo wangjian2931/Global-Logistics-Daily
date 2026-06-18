@@ -1,14 +1,14 @@
-# global-logistics-daily
+# Global-Logistics-Daily
 
 全球物流（Global Logistics）每日资讯：国际货代 + EPC 工程物流，DeepSeek 摘要，Buttondown 邮件，GitHub Pages 落地页。
 
 ## 微信分享链接
 
-https://wangjian2931.github.io/global-logistics-daily/
+https://wangjian2931.github.io/Global-Logistics-Daily/
 
 ## 首次配置 GitHub Pages（只需做一次）
 
-1. 打开 https://github.com/wangjian2931/global-logistics-daily/settings/pages
+1. 打开 https://github.com/wangjian2931/Global-Logistics-Daily/settings/pages
 2. **Build and deployment → Source** 选 **GitHub Actions**
 3. 保存
 
