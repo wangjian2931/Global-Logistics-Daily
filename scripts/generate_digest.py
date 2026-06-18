@@ -14,9 +14,13 @@ import requests
 import yaml
 from openai import OpenAI
 
+from publish_site import publish_site_pages  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = ROOT / "config" / "sources.yaml"
 OUTPUT_DIR = ROOT / "output"
+sys.path.insert(0, str(ROOT / "scripts"))
+from publish_site import publish_site_pages  # noqa: E402
 
 SYSTEM_PROMPT = """你是科技新闻编辑。根据给定英文/中文资讯，写一份中文「每日 AI 动态」邮件正文。
 
@@ -187,6 +191,9 @@ def main() -> int:
     out_file = OUTPUT_DIR / f"digest-{today}.md"
     out_file.write_text(body, encoding="utf-8")
     print(f"已保存本地副本: {out_file}")
+
+    index_file = publish_site_pages(today, subject, body)
+    print(f"已生成落地页: {index_file}")
 
     send_mode = os.environ.get("SEND_MODE", "draft").lower()
     result = send_to_buttondown(subject, body, send_mode)

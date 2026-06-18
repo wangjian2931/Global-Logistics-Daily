@@ -1,0 +1,12 @@
+# 落地页与微信分享配置
+title: 每日 AI 动态
+tagline: 自动整理 AI 行业资讯，每日一封邮件直达全文。
+description: 从 RSS 信息源筛选 AI 相关动态，由 DeepSeek 生成中文摘要，每日更新网页预览并邮件推送。
+author: Wang Jian
+buttondown_username: wangjian2931
+
+# GitHub Pages 项目站（仓库 daily-ai-digest）
+base_url: https://wangjian2931.github.io/daily-ai-digest
+
+# 微信链接卡片图片（建议 PNG/JPG，尺寸 ≥300×300）
+og_image: /assets/og-cover.png
