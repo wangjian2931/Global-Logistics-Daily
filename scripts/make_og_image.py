@@ -1,4 +1,7 @@
-"""生成微信链接卡片缩略图（PNG 1200×630 + JPG 300×300）。"""
+"""生成微信链接卡片缩略图（PNG 1200×630 + JPG 300×300）。
+
+仅本地手动运行；GitHub Actions 使用 docs/assets/ 中已提交的静态图片，避免 CI 无中文字体导致乱码。
+"""
 
 from __future__ import annotations
 
