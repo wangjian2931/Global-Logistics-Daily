@@ -39,6 +39,8 @@ def render_page(
 ) -> str:
     base_url = site["base_url"].rstrip("/")
     og_image = f"{base_url}{site['og_image']}"
+    og_w = site.get("og_image_width", 1200)
+    og_h = site.get("og_image_height", 630)
     share_description = site.get("share_description") or site["tagline"]
     description = og_description or share_description
     share_url = site.get("share_url") or f"{base_url}/"
@@ -56,8 +58,8 @@ def render_page(
   <meta property="og:title" content="{html.escape(site['title'])}">
   <meta property="og:description" content="{html.escape(share_description)}">
   <meta property="og:image" content="{html.escape(og_image)}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="{og_w}">
+  <meta property="og:image:height" content="{og_h}">
   <meta property="og:url" content="{html.escape(share_url)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{html.escape(site['title'])}">

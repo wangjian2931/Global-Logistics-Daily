@@ -10,8 +10,10 @@ buttondown_username: wangjian2931
 # GitHub Pages 项目站（仓库 Global-Logistics-Daily）
 base_url: https://wangjian2931.github.io/Global-Logistics-Daily
 
-# 分享给好友时用的链接（带 #subscribe 直达订阅区，与参考项目一致）
-share_url: https://wangjian2931.github.io/Global-Logistics-Daily/#subscribe
+# 微信抓取用的 canonical URL（不要带 #，否则部分版本不生成卡片）
+share_url: https://wangjian2931.github.io/Global-Logistics-Daily/
 
-# 微信链接卡片图片（建议 PNG/JPG，尺寸 ≥300×300）
-og_image: /assets/og-cover.png
+# 微信链接卡片图片（JPG 300×300，兼容性优于 PNG）
+og_image: /assets/og-cover.jpg
+og_image_width: 300
+og_image_height: 300
