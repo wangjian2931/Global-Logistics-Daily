@@ -2,11 +2,16 @@
 title: 全球物流每日动态
 tagline: Global Logistics · 国际货代与国际工程物流(EPC)行业资讯，每日更新。
 description: 聚焦 Global Logistics、国际货代、海运空运、供应链及国际工程物流(EPC)项目动态，每日摘要推送。
+# 微信链接卡片专用短描述（显示在标题下方，建议 40–80 字）
+share_description: 筛选全球货代与 EPC 工程物流资讯，每日一封邮件直达中文摘要。
 author: Wang Jian
 buttondown_username: wangjian2931
 
 # GitHub Pages 项目站（仓库 Global-Logistics-Daily）
 base_url: https://wangjian2931.github.io/Global-Logistics-Daily
+
+# 分享给好友时用的链接（带 #subscribe 直达订阅区，与参考项目一致）
+share_url: https://wangjian2931.github.io/Global-Logistics-Daily/#subscribe
 
 # 微信链接卡片图片（建议 PNG/JPG，尺寸 ≥300×300）
 og_image: /assets/og-cover.png

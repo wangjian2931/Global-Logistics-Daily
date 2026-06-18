@@ -39,8 +39,9 @@ def render_page(
 ) -> str:
     base_url = site["base_url"].rstrip("/")
     og_image = f"{base_url}{site['og_image']}"
-    description = og_description or site["description"]
-    username = site["buttondown_username"]
+    share_description = site.get("share_description") or site["tagline"]
+    description = og_description or share_description
+    share_url = site.get("share_url") or f"{base_url}/"
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -48,13 +49,23 @@ def render_page(
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{html.escape(page_title)}</title>
-  <meta name="description" content="{html.escape(description)}">
+  <meta name="description" content="{html.escape(share_description)}">
+  <link rel="canonical" href="{html.escape(base_url)}/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{html.escape(site['title'])}">
   <meta property="og:title" content="{html.escape(site['title'])}">
-  <meta property="og:description" content="{html.escape(description)}">
+  <meta property="og:description" content="{html.escape(share_description)}">
   <meta property="og:image" content="{html.escape(og_image)}">
-  <meta property="og:url" content="{html.escape(base_url)}/">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="{html.escape(share_url)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{html.escape(site['title'])}">
+  <meta name="twitter:description" content="{html.escape(share_description)}">
+  <meta name="twitter:image" content="{html.escape(og_image)}">
+  <meta itemprop="name" content="{html.escape(site['title'])}">
+  <meta itemprop="description" content="{html.escape(share_description)}">
+  <meta itemprop="image" content="{html.escape(og_image)}">
   <link rel="stylesheet" href="{asset_prefix}assets/style.css">
 </head>
 <body>
@@ -72,7 +83,7 @@ def render_page(
 def subscribe_block(site: dict) -> str:
     username = site["buttondown_username"]
     return f"""
-    <section class="card">
+    <section class="card" id="subscribe">
       <h2>邮件订阅</h2>
       <p class="meta">由 Buttondown 推送 · 订阅后每日自动收到邮件</p>
       <form
@@ -128,7 +139,6 @@ def render_index(site: dict, today: str, preview_html: str) -> str:
         site=site,
         page_title=f"{site['title']} | {today}",
         main_html=main,
-        og_description=site["tagline"],
     )
 
 

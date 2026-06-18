@@ -111,3 +111,7 @@ footer a { color: var(--link); }
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+#subscribe {
+  scroll-margin-top: 24px;
+}
