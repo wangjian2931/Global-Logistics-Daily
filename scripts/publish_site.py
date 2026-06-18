@@ -61,7 +61,7 @@ def render_page(
   <div class="wrap">
     {main_html}
     <footer>
-      <p>由 <a href="https://github.com/wangjian2931/daily-ai-digest">daily-ai-digest</a> 自动生成 · 邮件由 Buttondown 推送</p>
+      <p>由 <a href="https://github.com/wangjian2931/global-logistics-daily">Global Logistics Daily</a> 自动生成 · 邮件由 Buttondown 推送</p>
     </footer>
   </div>
 </body>
